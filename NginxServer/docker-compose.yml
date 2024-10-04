@@ -2,6 +2,7 @@ version: '3.8'
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginxserver-ai
     restart: unless-stopped
     ports:
       - '80:80'
