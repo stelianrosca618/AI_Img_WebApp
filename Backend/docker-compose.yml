@@ -1,0 +1,17 @@
+version: "3"
+services:
+  nginx-node:
+    container_name: ngixnodeapp
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    ports:
+      - "4000:4000"
+    # external_links:
+    #   - mongo
+    # no ports forward for cloud  
+    # networks:
+      # - cloudflarare-tunnel_default # for VM
+    # - cloudflare1_default         # for cloud  
+ 
