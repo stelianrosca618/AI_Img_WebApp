@@ -9,4 +9,5 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongouser
       MONGO_INITDB_ROOT_PASSWORD: mongopass
-  
+    volumes:
+        - ./db:/data/db
