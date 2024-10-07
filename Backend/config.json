@@ -1,4 +1,4 @@
 ﻿{
-    "connectionString": "mongodb://188.66.62.172:27017/aipicgenDB",
+    "connectionString": "mongodb://127.0.0.1:27017/aiimagedb",
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
 }
