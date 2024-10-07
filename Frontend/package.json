@@ -4,7 +4,7 @@
   "description": "Next & TypeScript",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8002 -H 192.168.x.x",
+    "dev": "next dev -p 8002 -H 66.179.191.202",
     "start": "next start",
     "build": "next build",
     "build-netlify": "next build && cp -r .next _next && mv _next .next/",
