@@ -1,6 +1,8 @@
 services:
   nextjs:
-    image: nextjs:latest
+    build: 
+      dockerfile: Dockerfile
+      context: .
     container_name: nextjs
     ports:
       - "3000:3000"
