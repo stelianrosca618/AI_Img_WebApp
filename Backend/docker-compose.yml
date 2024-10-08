@@ -7,7 +7,7 @@ services:
       context: .
     restart: always
     ports:
-      - "4000:4000"
+      - "8443:8443"
     # external_links:
     #   - mongo
     # no ports forward for cloud  
