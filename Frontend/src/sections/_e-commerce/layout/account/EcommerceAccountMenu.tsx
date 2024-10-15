@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
 import {
@@ -169,9 +168,9 @@ function MenuItem({ item }: MenuItemProps) {
 
   return (
     <Link
-      component={NextLink}
+      component={RouterLink}
       key={item.title}
-      href={item.path}
+      to={item.path}
       color={active ? 'primary' : 'inherit'}
       underline="none"
     >

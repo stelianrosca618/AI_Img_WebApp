@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Typography, Stack, Link } from '@mui/material';
@@ -80,7 +79,7 @@ export default function PostItem({ post, order, largePost }: Props) {
           }}
         />
 
-        <Link component={NextLink} href={paths.career.post} color="inherit">
+        <Link component={RouterLink} to={paths.career.post} color="inherit">
           <TextMaxLine variant={largePost ? 'h3' : 'h6'}>{title}</TextMaxLine>
         </Link>
 

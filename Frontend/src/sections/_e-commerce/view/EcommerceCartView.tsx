@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Container, Typography, Button, Unstable_Grid2 as Grid } from '@mui/material';
 // routes
@@ -47,8 +46,8 @@ export default function EcommerceCartView() {
         </Grid>
 
         <Button
-          component={NextLink}
-          href={paths.eCommerce.products}
+          component={RouterLink}
+          to={paths.eCommerce.products}
           color="inherit"
           startIcon={<Iconify icon="carbon:chevron-left" />}
           sx={{ mt: 3 }}

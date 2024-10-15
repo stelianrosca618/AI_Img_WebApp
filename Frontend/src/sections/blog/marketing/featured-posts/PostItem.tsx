@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Avatar, Link } from '@mui/material';
 // routes
@@ -44,7 +43,7 @@ export default function PostItem({ post }: Props) {
         <Stack spacing={1}>
           <PostTimeBlock createdAt={fDate(createdAt)} duration={duration} />
 
-          <Link component={NextLink} href={paths.marketing.post} color="inherit" variant="h3">
+          <Link component={RouterLink} to={paths.marketing.post} color="inherit" variant="h3">
             {title}
           </Link>
 

@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom';
 // @mui
 import { Stack, Container } from '@mui/material';
 // hooks
@@ -7,11 +8,7 @@ import Header from './Header';
 
 // ----------------------------------------------------------------------
 
-type Props = {
-  children?: React.ReactNode;
-};
-
-export default function CompactLayout({ children }: Props) {
+export default function CompactLayout() {
   const isOffset = useOffSetTop();
 
   return (
@@ -29,7 +26,7 @@ export default function CompactLayout({ children }: Props) {
             justifyContent: 'center',
           }}
         >
-          {children}
+          <Outlet />
         </Stack>
       </Container>
     </>

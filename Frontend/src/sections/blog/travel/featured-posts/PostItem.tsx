@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Box, Stack, Avatar, Link } from '@mui/material';
@@ -64,7 +63,7 @@ export default function PostItem({ post, largePost }: Props) {
           sx={{ color: 'inherit', opacity: 0.72 }}
         />
 
-        <Link component={NextLink} href={paths.travel.post} color="inherit">
+        <Link component={RouterLink} to={paths.travel.post} color="inherit">
           <TextMaxLine
             sx={{
               typography: 'h6',

@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Typography, Link } from '@mui/material';
 // routes
@@ -28,7 +27,7 @@ export default function MarketingCaseStudyItem({ project }: Props) {
           {category}
         </Typography>
 
-        <Link component={NextLink} href={paths.marketing.caseStudy} color="inherit">
+        <Link component={RouterLink} to={paths.marketing.caseStudy} color="inherit">
           <TextMaxLine variant="h5" line={1}>
             {title}
           </TextMaxLine>

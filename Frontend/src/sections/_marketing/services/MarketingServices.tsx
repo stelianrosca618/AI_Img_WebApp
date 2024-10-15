@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Box, Container, Typography, Button, Stack, Unstable_Grid2 as Grid } from '@mui/material';
 // routes
@@ -62,8 +61,8 @@ export default function MarketingServices() {
           </Stack>
 
           <Button
-            component={NextLink}
-            href={paths.marketing.caseStudies}
+            component={RouterLink}
+            to={paths.marketing.caseStudies}
             size="large"
             color="inherit"
             variant="outlined"

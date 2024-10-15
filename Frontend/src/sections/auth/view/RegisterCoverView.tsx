@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Link, Stack, Divider, Typography, Box } from '@mui/material';
 // routes
@@ -38,7 +37,7 @@ export default function RegisterCoverView() {
 
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             {`Already have an account? `}
-            <Link component={NextLink} href={paths.loginCover} variant="subtitle2" color="primary">
+            <Link component={RouterLink} to={paths.loginCover} variant="subtitle2" color="primary">
               Login
             </Link>
           </Typography>

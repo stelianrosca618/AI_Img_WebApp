@@ -1,6 +1,5 @@
 import { add } from 'date-fns';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Theme, alpha, useTheme } from '@mui/material/styles';
 import { Typography, Stack, SxProps, Link } from '@mui/material';
@@ -31,7 +30,7 @@ export default function EcommerceProductItemCountDown({ product, color = 'primar
   const theme = useTheme();
 
   return (
-    <Link component={NextLink} href={paths.eCommerce.product} color="inherit" underline="none">
+    <Link component={RouterLink} to={paths.eCommerce.product} color="inherit" underline="none">
       <Stack
         spacing={3}
         sx={{

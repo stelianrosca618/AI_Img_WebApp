@@ -1,6 +1,5 @@
 import { m } from 'framer-motion';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Stack, Avatar, Link } from '@mui/material';
@@ -72,7 +71,7 @@ export default function PostItem({ post }: Props) {
             sx={{ color: 'inherit', opacity: 0.72 }}
           />
 
-          <Link component={NextLink} href={paths.marketing.post} sx={{ color: 'common.white' }}>
+          <Link component={RouterLink} to={paths.marketing.post} sx={{ color: 'common.white' }}>
             <TextMaxLine variant="h4">{title}</TextMaxLine>
           </Link>
         </Stack>

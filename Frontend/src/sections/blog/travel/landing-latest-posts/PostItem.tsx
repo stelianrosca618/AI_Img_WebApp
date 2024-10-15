@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Typography, Link, Divider } from '@mui/material';
 // utils
@@ -26,7 +25,7 @@ export default function PostItem({ post }: Props) {
         {fDate(createdAt)}
       </Typography>
 
-      <Link component={NextLink} href={paths.travel.post} sx={{ color: 'common.white' }}>
+      <Link component={RouterLink} to={paths.travel.post} sx={{ color: 'common.white' }}>
         <TextMaxLine variant="h5" sx={{ mt: 1, mb: 2 }}>
           {title}
         </TextMaxLine>

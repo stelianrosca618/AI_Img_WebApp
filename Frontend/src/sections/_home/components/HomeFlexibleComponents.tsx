@@ -1,7 +1,6 @@
 import { m } from 'framer-motion';
 import { useEffect, useState } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
 import {
@@ -147,8 +146,8 @@ export default function HomeFlexibleComponents() {
 
             <m.div variants={varFade().inUp}>
               <Button
-                component={NextLink}
-                href={paths.components.root}
+                component={RouterLink}
+                to={paths.components.root}
                 color="inherit"
                 size="large"
                 variant="outlined"

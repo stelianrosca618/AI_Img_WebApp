@@ -40,7 +40,7 @@ export default function ListMobile({ list }: { list: NavListProps }) {
       <Collapse in={expand} unmountOnExit sx={{ width: 1 }}>
         <Stack spacing={1.5} alignItems="flex-start">
           {items?.map((link) => (
-            <StyledLink key={link.title} href={link.path}>
+            <StyledLink key={link.title} to={link.path}>
               {link.title}
             </StyledLink>
           ))}

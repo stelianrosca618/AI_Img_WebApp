@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Link, Avatar, Typography } from '@mui/material';
 // routes
@@ -56,8 +55,8 @@ export default function PostItem({ post, index }: Props) {
         />
 
         <Link
-          component={NextLink}
-          href={paths.career.post}
+          component={RouterLink}
+          to={paths.career.post}
           color="inherit"
           variant="h5"
           sx={{

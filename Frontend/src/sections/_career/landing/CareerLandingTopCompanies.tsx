@@ -1,6 +1,5 @@
 import { useRef } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Typography, Container, Box, Link } from '@mui/material';
@@ -101,7 +100,7 @@ type CompanyItemProps = {
 
 function CompanyItem({ company }: CompanyItemProps) {
   return (
-    <Link component={NextLink} href={paths.career.jobs} color="inherit" underline="none">
+    <Link component={RouterLink} to={paths.career.jobs} color="inherit" underline="none">
       <Box
         sx={{
           py: 5,

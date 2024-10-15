@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
-// next
-import NextLink from 'next/link';
+
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Link } from '@mui/material';
 // components
@@ -46,7 +46,7 @@ export const NavItem = forwardRef<HTMLDivElement, NavItemProps>(
 
     // Default
     return (
-      <Link component={NextLink} href={path} color="inherit" underline="none">
+      <Link component={RouterLink} to={path} color="inherit" underline="none">
         {renderContent}
       </Link>
     );

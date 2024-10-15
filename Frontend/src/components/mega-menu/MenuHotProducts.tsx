@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Link, Typography, Box } from '@mui/material';
 // types
@@ -23,8 +22,8 @@ export default function MenuHotProducts({ tags, ...other }: MenuHotProductsProps
       {tags.map((tag, index) => (
         <Link
           key={tag.name}
-          component={NextLink}
-          href={tag.path}
+          component={RouterLink}
+          to={tag.path}
           underline="none"
           variant="caption"
           sx={{

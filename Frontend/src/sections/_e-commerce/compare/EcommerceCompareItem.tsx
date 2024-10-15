@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Typography, Rating, Button } from '@mui/material';
 // utils
@@ -47,8 +46,8 @@ export default function EcommerceCompareItem({ product }: Props) {
       </Stack>
 
       <Button
-        component={NextLink}
-        href={paths.eCommerce.cart}
+        component={RouterLink}
+        to={paths.eCommerce.cart}
         fullWidth
         size="large"
         color="inherit"

@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// next
-import { useRouter } from 'next/router';
+import { useNavigate } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Typography, Stack, Box, Button, Divider, Card } from '@mui/material';
@@ -20,7 +19,7 @@ type Props = {
 };
 
 export default function TravelTourDetailsReserveForm({ tour }: Props) {
-  const { push } = useRouter();
+  const navigate = useNavigate();
 
   const [departureDay, setDepartureDay] = useState<Date | null>(null);
 
@@ -52,7 +51,7 @@ export default function TravelTourDetailsReserveForm({ tour }: Props) {
   };
 
   const handleClickReserve = () => {
-    push(paths.travel.checkout);
+    navigate(paths.travel.checkout);
   };
 
   return (

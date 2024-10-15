@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { m } from 'framer-motion';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import {
@@ -125,8 +124,8 @@ export default function CareerLandingConnections({ countries }: Props) {
               </Typography>
 
               <Button
-                component={NextLink}
-                href={paths.career.jobs}
+                component={RouterLink}
+                to={paths.career.jobs}
                 color="inherit"
                 size="large"
                 variant="contained"
@@ -188,7 +187,7 @@ function JobByCountryItem({ country }: JobByCountryItemProp) {
   const { location, coverImg, totalJobs } = country;
 
   return (
-    <Link component={NextLink} href={paths.career.jobs} underline="none">
+    <Link component={RouterLink} to={paths.career.jobs} underline="none">
       <Card
         component={m.div}
         whileHover="hover"

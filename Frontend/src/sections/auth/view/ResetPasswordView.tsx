@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Link, Typography } from '@mui/material';
 // routes
@@ -33,8 +32,8 @@ export default function ResetPasswordView() {
       <AuthResetPasswordForm />
 
       <Link
-        component={NextLink}
-        href={paths.loginCover}
+        component={RouterLink}
+        to={paths.loginCover}
         color="inherit"
         variant="subtitle2"
         sx={{

@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Theme } from '@mui/material/styles';
 import { Stack, Paper, Typography, LinearProgress, SxProps, Link } from '@mui/material';
@@ -23,7 +22,7 @@ type Props = {
 
 export default function EcommerceProductItemHot({ product, hotProduct = false, sx }: Props) {
   return (
-    <Link component={NextLink} href={paths.eCommerce.product} color="inherit" underline="none">
+    <Link component={RouterLink} to={paths.eCommerce.product} color="inherit" underline="none">
       <Paper
         variant="outlined"
         sx={{

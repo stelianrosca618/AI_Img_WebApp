@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // routes
 import { paths } from 'src/routes/paths';
 // utils
@@ -30,7 +29,7 @@ export default function PostItem({ post }: Props) {
       <Stack spacing={1}>
         <PostTimeBlock createdAt={fDate(createdAt)} duration={duration} />
 
-        <Link component={NextLink} href={paths.travel.post} color="inherit">
+        <Link component={RouterLink} to={paths.travel.post} color="inherit">
           <TextMaxLine variant="h5" persistent>
             {title}
           </TextMaxLine>

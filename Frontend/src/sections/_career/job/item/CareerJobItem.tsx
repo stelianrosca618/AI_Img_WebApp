@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import {
   Divider,
@@ -80,7 +79,7 @@ export default function CareerJobItem({ job }: Props) {
         </Stack>
 
         <Stack spacing={0.5} sx={{ mt: 3, mb: 2 }}>
-          <Link component={NextLink} href={paths.career.job} color="inherit">
+          <Link component={RouterLink} to={paths.career.job} color="inherit">
             <TextMaxLine variant="h6" line={1}>
               {slug}
             </TextMaxLine>

@@ -14,7 +14,7 @@ export default function ListDesktop({ list }: { list: NavListProps }) {
       <Typography variant="subtitle2">{subheader}</Typography>
 
       {items?.map((link) => (
-        <StyledLink key={link.title} href={link.path}>
+        <StyledLink key={link.title} to={link.path}>
           {link.title}
         </StyledLink>
       ))}

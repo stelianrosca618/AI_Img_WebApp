@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import Masonry from '@mui/lab/Masonry';
 import { Container, Typography, Stack, Button, Box } from '@mui/material';
@@ -28,8 +27,8 @@ export default function BlogCareerLatestPosts({ posts }: Props) {
 
   const viewAllBtn = (
     <Button
-      component={NextLink}
-      href={paths.career.posts}
+      component={RouterLink}
+      to={paths.career.posts}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
     >

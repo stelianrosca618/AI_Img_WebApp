@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Stack, Badge, Container, IconButton, Button } from '@mui/material';
@@ -77,8 +76,8 @@ export default function EcommerceHeader() {
 
           <Badge badgeContent={2} color="info">
             <IconButton
-              component={NextLink}
-              href={paths.eCommerce.wishlist}
+              component={RouterLink}
+              to={paths.eCommerce.wishlist}
               size="small"
               color="inherit"
               sx={{ p: 0 }}
@@ -89,8 +88,8 @@ export default function EcommerceHeader() {
 
           <Badge badgeContent={4} color="error">
             <IconButton
-              component={NextLink}
-              href={paths.eCommerce.cart}
+              component={RouterLink}
+              to={paths.eCommerce.cart}
               size="small"
               color="inherit"
               sx={{ p: 0 }}
@@ -100,8 +99,8 @@ export default function EcommerceHeader() {
           </Badge>
 
           <IconButton
-            component={NextLink}
-            href={paths.eCommerce.account.personal}
+            component={RouterLink}
+            to={paths.eCommerce.account.personal}
             size="small"
             color="inherit"
             sx={{ p: 0 }}

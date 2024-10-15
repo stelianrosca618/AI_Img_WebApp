@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Stack, StackProps, Button } from '@mui/material';
@@ -56,8 +55,8 @@ export default function EcommerceProductItemFeaturedByBrand({ product, sx, ...ot
 
         <Stack flexGrow={1} alignItems="flex-end" justifyContent="flex-end">
           <Button
-            component={NextLink}
-            href={paths.eCommerce.product}
+            component={RouterLink}
+            to={paths.eCommerce.product}
             size="small"
             color="inherit"
             variant="contained"

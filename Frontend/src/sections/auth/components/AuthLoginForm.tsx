@@ -2,8 +2,7 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { LoadingButton } from '@mui/lab';
 import { Stack, Link, IconButton, InputAdornment } from '@mui/material';
@@ -81,8 +80,8 @@ export default function AuthLoginForm() {
         />
 
         <Link
-          component={NextLink}
-          href={paths.resetPassword}
+          component={RouterLink}
+          to={paths.resetPassword}
           variant="body2"
           underline="always"
           color="text.secondary"

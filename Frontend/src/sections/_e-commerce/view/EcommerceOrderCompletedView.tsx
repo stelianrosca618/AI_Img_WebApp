@@ -1,6 +1,5 @@
 import { m } from 'framer-motion';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Box, Button, Typography, Stack, Container } from '@mui/material';
 // routes
@@ -39,8 +38,8 @@ export default function EcommerceOrderCompletedView() {
         </Stack>
 
         <Button
-          component={NextLink}
-          href={paths.eCommerce.products}
+          component={RouterLink}
+          to={paths.eCommerce.products}
           size="large"
           color="inherit"
           variant="contained"

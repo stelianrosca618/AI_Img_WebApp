@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Theme } from '@mui/material/styles';
 import { Stack, Box, Paper, Button, SxProps } from '@mui/material';
@@ -43,8 +42,8 @@ export default function EcommerceProductItemTop({ product, variant = 'small', sx
 
   const moreBtn = (
     <Button
-      component={NextLink}
-      href={paths.eCommerce.product}
+      component={RouterLink}
+      to={paths.eCommerce.product}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
       sx={{ flexShrink: 0 }}

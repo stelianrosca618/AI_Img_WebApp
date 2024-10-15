@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, StackProps, Link } from '@mui/material';
 // routes
@@ -20,7 +19,7 @@ interface Props extends StackProps {
 
 export default function EcommerceProductItemBestSellers({ product, ...other }: Props) {
   return (
-    <Link component={NextLink} href={paths.eCommerce.product} color="inherit" underline="none">
+    <Link component={RouterLink} to={paths.eCommerce.product} color="inherit" underline="none">
       <Stack
         spacing={2}
         direction="row"

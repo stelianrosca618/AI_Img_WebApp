@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Container, Typography, Card, Box, IconButton } from '@mui/material';
 // routes
@@ -137,8 +136,8 @@ function ServiceItem({ service, index }: ServiceItemProps) {
       </Stack>
 
       <IconButton
-        component={NextLink}
-        href={path}
+        component={RouterLink}
+        to={path}
         color={
           (index === 0 && 'primary') ||
           (index === 1 && 'secondary') ||

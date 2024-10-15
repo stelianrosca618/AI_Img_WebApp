@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Typography, Paper, Avatar, Button, Container, Box, Link } from '@mui/material';
 // hooks
@@ -23,8 +22,8 @@ export default function TravelLandingToursByCity({ tours }: Props) {
 
   const viewAllBtn = (
     <Button
-      component={NextLink}
-      href={paths.travel.tours}
+      component={RouterLink}
+      to={paths.travel.tours}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
     >
@@ -94,7 +93,7 @@ function TourItem({ tour }: TourItemProps) {
   const { coverImg, location } = tour;
 
   return (
-    <Link component={NextLink} href={paths.travel.tour} color="inherit" underline="none">
+    <Link component={RouterLink} to={paths.travel.tour} color="inherit" underline="none">
       <Paper
         variant="outlined"
         sx={{

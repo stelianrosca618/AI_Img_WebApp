@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Box, Stack, Typography, Fab } from '@mui/material';
@@ -64,7 +63,7 @@ export default function PostItemCarouse({ post }: Props) {
 
           <Typography sx={{ opacity: 0.72, mb: 10 }}>{description}</Typography>
 
-          <Fab component={NextLink} href={paths.travel.post}>
+          <Fab component={RouterLink} to={paths.travel.post}>
             <Iconify icon="carbon:chevron-right" />
           </Fab>
         </Box>

@@ -1,14 +1,10 @@
-import { useMemo, useState, useEffect, useContext, useCallback, createContext } from 'react';
+import { useMemo, useState, useContext, useCallback, createContext } from 'react';
+// hooks
+import useLocalStorage from 'src/hooks/useLocalStorage';
 //
 import { defaultSettings } from './config-setting';
 import { defaultPreset, getPresets, presetsOption } from './presets';
-import {
-  ThemeModeValue,
-  PresetsColorProps,
-  ThemeDirectionValue,
-  SettingsContextProps,
-  ThemeColorPresetsValue,
-} from './types';
+import { SettingsContextProps } from './types';
 
 // ----------------------------------------------------------------------
 
@@ -54,50 +50,33 @@ type SettingsProviderProps = {
 export function SettingsProvider({ children }: SettingsProviderProps) {
   const [open, setOpen] = useState(false);
 
-  const [themeMode, setThemeMode] = useState(defaultSettings.themeMode);
-  const [themeDirection, setThemeDirection] = useState(defaultSettings.themeDirection);
-  const [themeColorPresets, setThemeColorPresets] = useState(defaultSettings.themeColorPresets);
-
-  useEffect(() => {
-    const mode = getCookie('themeMode') || defaultSettings.themeMode;
-    const direction = getCookie('themeDirection') || defaultSettings.themeDirection;
-    const colorPresets = getCookie('themeColorPresets') || defaultSettings.themeColorPresets;
-
-    setThemeMode(mode as ThemeModeValue);
-    setThemeDirection(direction as ThemeDirectionValue);
-    setThemeColorPresets(colorPresets as ThemeColorPresetsValue);
-  }, []);
+  const [settings, setSettings] = useLocalStorage('settings', defaultSettings);
 
   // Mode
   const onToggleMode = useCallback(() => {
-    const value = themeMode === 'light' ? 'dark' : 'light';
-    setThemeMode(value);
-    setCookie('themeMode', value);
-  }, [themeMode]);
+    const themeMode = settings.themeMode === 'light' ? 'dark' : 'light';
+    setSettings({ ...settings, themeMode });
+  }, [setSettings, settings]);
 
   // Direction
   const onToggleDirection = useCallback(() => {
-    const value = themeDirection === 'rtl' ? 'ltr' : 'rtl';
-    setThemeDirection(value);
-    setCookie('themeDirection', value);
-  }, [themeDirection]);
+    const themeDirection = settings.themeDirection === 'rtl' ? 'ltr' : 'rtl';
+    setSettings({ ...settings, themeDirection });
+  }, [setSettings, settings]);
 
   // Color
-  const onChangeColorPresets = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value as ThemeColorPresetsValue;
-    setThemeColorPresets(value);
-    setCookie('themeColorPresets', value);
-  }, []);
+  const onChangeColorPresets = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const themeColorPresets = event.target.value;
+      setSettings({ ...settings, themeColorPresets });
+    },
+    [setSettings, settings]
+  );
 
   // Reset
   const onResetSetting = useCallback(() => {
-    setThemeMode(defaultSettings.themeMode);
-    setThemeDirection(defaultSettings.themeDirection);
-    setThemeColorPresets(defaultSettings.themeColorPresets);
-    removeCookie('themeMode');
-    removeCookie('themeDirection');
-    removeCookie('themeColorPresets');
-  }, []);
+    setSettings(defaultSettings);
+  }, [setSettings]);
 
   const onToggle = useCallback(() => {
     setOpen(!open);
@@ -112,23 +91,21 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
   }, []);
 
   const notDefault =
-    themeMode !== defaultSettings.themeMode ||
-    themeDirection !== defaultSettings.themeDirection ||
-    themeColorPresets !== defaultSettings.themeColorPresets;
+    settings.themeMode !== defaultSettings.themeMode ||
+    settings.themeDirection !== defaultSettings.themeDirection ||
+    settings.themeColorPresets !== defaultSettings.themeColorPresets;
 
   const memoizedValue = useMemo(
     () => ({
+      ...settings,
       // Mode
-      themeMode,
       onToggleMode,
       // Direction
-      themeDirection,
       onToggleDirection,
       // Color
-      themeColorPresets,
       onChangeColorPresets,
       presetsOption,
-      presetsColor: getPresets(themeColorPresets) as PresetsColorProps,
+      presetsColor: getPresets(settings.themeColorPresets),
       // Reset
       onResetSetting,
       // Open
@@ -140,14 +117,12 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
       notDefault,
     }),
     [
+      settings,
       // Mode
-      themeMode,
       onToggleMode,
       // Color
-      themeColorPresets,
       onChangeColorPresets,
       // Direction
-      themeDirection,
       onToggleDirection,
       // Reset
       onResetSetting,
@@ -162,35 +137,4 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
   );
 
   return <SettingsContext.Provider value={memoizedValue}>{children}</SettingsContext.Provider>;
-}
-
-// ----------------------------------------------------------------------
-
-function getCookie(name: string) {
-  if (typeof document === 'undefined') {
-    throw new Error(
-      'getCookie() is not supported on the server. Fallback to a different value when rendering on the server.'
-    );
-  }
-
-  const value = `; ${document.cookie}`;
-
-  const parts = value.split(`; ${name}=`);
-
-  if (parts.length === 2) {
-    return parts[1].split(';').shift();
-  }
-
-  return undefined;
-}
-
-function setCookie(name: string, value: string, exdays = 3) {
-  const date = new Date();
-  date.setTime(date.getTime() + exdays * 24 * 60 * 60 * 1000);
-  const expires = `expires=${date.toUTCString()}`;
-  document.cookie = `${name}=${value};${expires};path=/`;
-}
-
-function removeCookie(name: string) {
-  document.cookie = `${name}=;path=/;max-age=0`;
 }

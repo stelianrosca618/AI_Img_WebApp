@@ -1,7 +1,5 @@
 import { useState, useEffect, forwardRef } from 'react';
-// next
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 // @mui
 import {
   Box,
@@ -37,7 +35,7 @@ type Props = {
 };
 
 export default function MegaMenuMobile({ data, open, action, onOpen, onClose }: Props) {
-  const { pathname } = useRouter();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (open) {
@@ -164,8 +162,8 @@ function SubMenu({ parent, pathname }: SubMenuProps) {
                     {items.map((link) => (
                       <Link
                         key={link.title}
-                        component={NextLink}
-                        href={link.path}
+                        component={RouterLink}
+                        to={link.path}
                         color="inherit"
                         underline="none"
                       >
@@ -208,7 +206,7 @@ function SubMenu({ parent, pathname }: SubMenuProps) {
   }
 
   return (
-    <Link component={NextLink} href={path} color="inherit" underline="none">
+    <Link component={RouterLink} to={path} color="inherit" underline="none">
       <ParentItem title={title} icon={icon} />
     </Link>
   );

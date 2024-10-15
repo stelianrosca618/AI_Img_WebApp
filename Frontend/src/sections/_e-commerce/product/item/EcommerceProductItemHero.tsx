@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { alpha, useTheme } from '@mui/material/styles';
 import { Box, Button, Unstable_Grid2 as Grid } from '@mui/material';
@@ -58,8 +57,8 @@ export default function EcommerceProductItemHero({ product }: Props) {
           </TextMaxLine>
 
           <Button
-            component={NextLink}
-            href={paths.eCommerce.product}
+            component={RouterLink}
+            to={paths.eCommerce.product}
             size="large"
             color="inherit"
             variant="contained"

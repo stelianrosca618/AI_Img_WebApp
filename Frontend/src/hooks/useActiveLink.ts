@@ -1,5 +1,4 @@
-// next
-import { useRouter } from 'next/router';
+import { useLocation, matchPath } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -9,17 +8,11 @@ type ReturnType = {
 };
 
 export default function useActiveLink(path: string, deep = true): ReturnType {
-  const { pathname, asPath } = useRouter();
+  const { pathname } = useLocation();
 
-  const checkPath = path.startsWith('#');
+  const normalActive = path ? !!matchPath({ path, end: true }, pathname) : false;
 
-  const currentPath = path === '/' ? '/' : `${path}/`;
-
-  const normalActive =
-    (!checkPath && pathname === currentPath) || (!checkPath && asPath === currentPath);
-
-  const deepActive =
-    (!checkPath && pathname.includes(currentPath)) || (!checkPath && asPath.includes(currentPath));
+  const deepActive = path ? !!matchPath({ path, end: false }, pathname) : false;
 
   return {
     active: deep ? deepActive : normalActive,

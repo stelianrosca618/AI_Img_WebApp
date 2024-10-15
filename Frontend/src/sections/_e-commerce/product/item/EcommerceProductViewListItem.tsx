@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, StackProps, Link, Fab } from '@mui/material';
 // routes
@@ -45,8 +44,8 @@ export default function EcommerceProductViewListItem({ product, ...other }: Prop
       )}
 
       <Fab
-        component={NextLink}
-        href={paths.eCommerce.product}
+        component={RouterLink}
+        to={paths.eCommerce.product}
         className="add-to-cart"
         color="primary"
         size="medium"
@@ -83,7 +82,7 @@ export default function EcommerceProductViewListItem({ product, ...other }: Prop
             {product.category}
           </TextMaxLine>
 
-          <Link component={NextLink} href={paths.eCommerce.product} color="inherit">
+          <Link component={RouterLink} to={paths.eCommerce.product} color="inherit">
             <TextMaxLine variant="h6" line={1}>
               {product.name}
             </TextMaxLine>

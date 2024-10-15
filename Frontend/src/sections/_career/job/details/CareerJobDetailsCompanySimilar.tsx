@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Typography, Link, Paper } from '@mui/material';
 // routes
@@ -34,7 +33,7 @@ export default function CareerJobDetailsCompanySimilar({ jobs }: Props) {
             },
           }}
         >
-          <Link component={NextLink} href={paths.career.job} variant="subtitle1" color="inherit">
+          <Link component={RouterLink} to={paths.career.job} variant="subtitle1" color="inherit">
             {job.slug}
           </Link>
 

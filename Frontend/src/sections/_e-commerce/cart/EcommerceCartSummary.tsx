@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
 import {
@@ -73,8 +72,8 @@ export default function EcommerceCartSummary({ tax, total, subtotal, shipping, d
       />
 
       <Button
-        component={NextLink}
-        href={paths.eCommerce.checkout}
+        component={RouterLink}
+        to={paths.eCommerce.checkout}
         size="large"
         variant="contained"
         color="inherit"

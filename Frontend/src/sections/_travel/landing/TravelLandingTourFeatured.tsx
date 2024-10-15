@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Container, Stack, Button, Typography, Box } from '@mui/material';
 // routes
@@ -49,8 +48,8 @@ export default function TravelLandingTourFeatured({ tours }: Props) {
 
       <Box sx={{ textAlign: 'center' }}>
         <Button
-          component={NextLink}
-          href={paths.travel.tours}
+          component={RouterLink}
+          to={paths.travel.tours}
           size="large"
           variant="outlined"
           color="inherit"

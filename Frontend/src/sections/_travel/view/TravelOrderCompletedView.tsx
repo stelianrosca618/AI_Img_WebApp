@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Container, Typography, Stack, Button } from '@mui/material';
 // hooks
@@ -43,8 +42,8 @@ export default function TravelOrderCompletedView() {
 
         <Stack spacing={2.5} direction={{ xs: 'column', md: 'row' }} justifyContent="center">
           <Button
-            component={NextLink}
-            href="/"
+            component={RouterLink}
+            to="/"
             variant="outlined"
             size="large"
             color="inherit"

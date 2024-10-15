@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Box, Container, Stack, Button, Typography } from '@mui/material';
 // hooks
@@ -24,8 +23,8 @@ export default function ElearningCourseListSimilar({ courses }: Props) {
 
   const viewAllBtn = (
     <Button
-      component={NextLink}
-      href={paths.eLearning.courses}
+      component={RouterLink}
+      to={paths.eLearning.courses}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
     >

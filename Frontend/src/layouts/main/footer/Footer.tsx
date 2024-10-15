@@ -1,5 +1,4 @@
-// next
-import { useRouter } from 'next/router';
+import { useLocation } from 'react-router-dom';
 // @mui
 import { alpha, styled } from '@mui/material/styles';
 import Masonry from '@mui/lab/Masonry';
@@ -47,7 +46,7 @@ const StyledAppStoreButton = styled(Button)(({ theme }) => ({
 export default function Footer() {
   const isMdUp = useResponsive('up', 'md');
 
-  const { pathname } = useRouter();
+  const { pathname } = useLocation();
 
   const mobileList = navConfig.find((i) => i.title === 'Pages')?.children || [];
 

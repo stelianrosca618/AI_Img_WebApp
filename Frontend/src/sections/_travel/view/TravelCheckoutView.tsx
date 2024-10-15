@@ -2,8 +2,7 @@ import * as Yup from 'yup';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-// next
-import { useRouter } from 'next/router';
+import { useNavigate } from 'react-router-dom';
 // @mui
 import { Box, Stack, Divider, Container, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 // routes
@@ -26,7 +25,7 @@ import {
 type FormValuesProps = ITourCheckoutProps;
 
 export default function TravelCheckoutView() {
-  const { replace } = useRouter();
+  const navigate = useNavigate();
 
   const [sameBilling, setSameBilling] = useState(false);
 
@@ -84,7 +83,7 @@ export default function TravelCheckoutView() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
       reset();
-      replace(paths.travel.orderCompleted);
+      navigate(paths.travel.orderCompleted);
       console.log('DATA', data);
     } catch (error) {
       console.error(error);

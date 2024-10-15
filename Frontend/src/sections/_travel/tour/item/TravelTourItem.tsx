@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Divider, Stack, Card, Typography, Box, Link, Checkbox } from '@mui/material';
 // routes
@@ -81,7 +80,7 @@ export default function TravelTourItem({ tour }: Props) {
           {location}
         </Typography>
 
-        <Link component={NextLink} href={paths.travel.tour} color="inherit">
+        <Link component={RouterLink} to={paths.travel.tour} color="inherit">
           <TextMaxLine variant="h6" persistent>
             {slug}
           </TextMaxLine>

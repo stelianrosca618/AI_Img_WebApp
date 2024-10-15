@@ -6,6 +6,7 @@ import { Box, SxProps } from '@mui/material';
 import { bgBlur } from 'src/utils/cssStyles';
 //
 import Logo from '../logo';
+import ProgressBar from '../progress-bar';
 
 // ----------------------------------------------------------------------
 
@@ -34,6 +35,8 @@ type Props = {
 export default function LoadingScreen({ sx }: Props) {
   return (
     <>
+      <ProgressBar />
+
       <StyledRoot sx={sx}>
         <m.div
           animate={{

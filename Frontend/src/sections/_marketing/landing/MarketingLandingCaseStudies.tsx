@@ -1,6 +1,5 @@
 import { m } from 'framer-motion';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import {
@@ -132,8 +131,8 @@ export default function MarketingLandingCaseStudies({ caseStudies }: Props) {
 
       <Stack alignItems={{ xs: 'center', md: 'flex-end' }}>
         <Button
-          component={NextLink}
-          href={paths.marketing.caseStudies}
+          component={RouterLink}
+          to={paths.marketing.caseStudies}
           size="large"
           color="inherit"
           endIcon={<Iconify icon="carbon:chevron-right" />}
@@ -186,8 +185,8 @@ function LargeItem({ caseStudy }: LargeItemProps) {
         </div>
 
         <Button
-          component={NextLink}
-          href={paths.marketing.caseStudy}
+          component={RouterLink}
+          to={paths.marketing.caseStudy}
           size="small"
           color="inherit"
           endIcon={<Iconify icon="carbon:chevron-right" />}
@@ -211,7 +210,7 @@ function SmallItem({ caseStudy, isSquare, isMdUp }: SmallItemProps) {
   const { coverImg, title, category } = caseStudy;
 
   return (
-    <Link component={NextLink} href={paths.marketing.caseStudy}>
+    <Link component={RouterLink} to={paths.marketing.caseStudy}>
       <Paper
         component={m.div}
         whileHover="hover"

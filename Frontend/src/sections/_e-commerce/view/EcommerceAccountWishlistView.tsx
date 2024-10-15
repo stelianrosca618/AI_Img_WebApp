@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Box, Typography, Button, Stack } from '@mui/material';
 // routes
@@ -36,8 +35,8 @@ export default function EcommerceAccountWishlistView() {
           </Stack>
 
           <Button
-            component={NextLink}
-            href={paths.eCommerce.cart}
+            component={RouterLink}
+            to={paths.eCommerce.cart}
             size="large"
             color="inherit"
             variant="contained"

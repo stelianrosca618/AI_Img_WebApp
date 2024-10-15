@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, ReactNode } from 'react';
 // @mui
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeOptions, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
@@ -15,7 +15,7 @@ import GlobalStyles from './globalStyles';
 // ----------------------------------------------------------------------
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function ThemeProvider({ children }: Props) {

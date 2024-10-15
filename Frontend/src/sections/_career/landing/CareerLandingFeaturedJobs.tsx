@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Container, Stack, Button, Typography, Box, Unstable_Grid2 as Grid } from '@mui/material';
 // routes
@@ -66,8 +65,8 @@ export default function CareerLandingFeaturedJobs({ jobs }: Props) {
 
       <Stack alignItems="center">
         <Button
-          component={NextLink}
-          href={paths.career.jobs}
+          component={RouterLink}
+          to={paths.career.jobs}
           color="inherit"
           size="large"
           variant="outlined"

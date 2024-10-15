@@ -1,6 +1,5 @@
 import { useRef } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
@@ -58,8 +57,8 @@ export default function BlogMarketingLatestPosts({ posts }: Props) {
 
   const viewAllBtn = (
     <Button
-      component={NextLink}
-      href={paths.marketing.posts}
+      component={RouterLink}
+      to={paths.marketing.posts}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
     >

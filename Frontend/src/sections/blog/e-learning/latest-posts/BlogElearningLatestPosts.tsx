@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Box, Container, Typography, Stack, Button } from '@mui/material';
 // hooks
@@ -25,8 +24,8 @@ export default function BlogElearningLatestPosts({ posts }: Props) {
 
   const viewAllBtn = (
     <Button
-      component={NextLink}
-      href={paths.eLearning.posts}
+      component={RouterLink}
+      to={paths.eLearning.posts}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
     >

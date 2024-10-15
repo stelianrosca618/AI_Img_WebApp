@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Container, Stack, Button, Typography, Box } from '@mui/material';
 // hooks
@@ -24,8 +23,8 @@ export default function MarketingCaseStudyListSimilar({ caseStudies }: Props) {
 
   const viewAllBtn = (
     <Button
-      component={NextLink}
-      href={paths.marketing.caseStudies}
+      component={RouterLink}
+      to={paths.marketing.caseStudies}
       color="inherit"
       endIcon={<Iconify icon="carbon:chevron-right" />}
     >

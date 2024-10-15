@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
 import {
@@ -101,8 +100,8 @@ function BrandInfo({ logo, name, description, path, sx, ...other }: BrandInfoPro
       </Typography>
 
       <Button
-        component={NextLink}
-        href={path}
+        component={RouterLink}
+        to={path}
         color="inherit"
         endIcon={<Iconify icon="carbon:chevron-right" />}
         sx={{ mt: 5 }}

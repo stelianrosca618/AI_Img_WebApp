@@ -2,8 +2,7 @@ import { useState } from 'react';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-// next
-import { useRouter } from 'next/router';
+import { useNavigate } from 'react-router-dom';
 // @mui
 import {
   Box,
@@ -77,7 +76,7 @@ const PAYMENT_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function EcommerceCheckoutView() {
-  const { replace } = useRouter();
+  const navigate = useNavigate();
 
   const [openNewForm, setOpenNewForm] = useState(false);
 
@@ -127,7 +126,7 @@ export default function EcommerceCheckoutView() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
       reset();
-      replace(paths.eCommerce.orderCompleted);
+      navigate(paths.eCommerce.orderCompleted);
       console.log('DATA', data);
     } catch (error) {
       console.error(error);

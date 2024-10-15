@@ -1,6 +1,5 @@
 import { useRef } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Box, Link } from '@mui/material';
@@ -56,8 +55,8 @@ export default function MenuCarousel({ products, numberShow, sx }: MenuCarouselP
           {products.map((product) => (
             <Box key={product.name} sx={{ px: 1, textAlign: 'center' }}>
               <Link
-                component={NextLink}
-                href={product.path}
+                component={RouterLink}
+                to={product.path}
                 color="inherit"
                 underline="none"
                 sx={{

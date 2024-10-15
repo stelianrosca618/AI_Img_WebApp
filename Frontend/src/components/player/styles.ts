@@ -1,11 +1,8 @@
-// next
-import dynamic from 'next/dynamic';
+import ReactPlayer from 'react-player';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 // utils
 import { bgGradient } from 'src/utils/cssStyles';
-//
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 // ----------------------------------------------------------------------
 

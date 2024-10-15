@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Typography, Container, Stack, Avatar, Link, Box } from '@mui/material';
 // routes
@@ -44,7 +43,7 @@ export default function BlogElearningFeaturedPost({ post }: Props) {
           >
             <PostTimeBlock createdAt={fDate(createdAt)} duration={duration} />
 
-            <Link component={NextLink} href={paths.eLearning.post} color="inherit" variant="h3">
+            <Link component={RouterLink} to={paths.eLearning.post} color="inherit" variant="h3">
               {title}
             </Link>
 

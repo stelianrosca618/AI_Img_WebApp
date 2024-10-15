@@ -1,6 +1,5 @@
 import { m } from 'framer-motion';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Button, Typography } from '@mui/material';
 // components
@@ -37,7 +36,7 @@ export default function Error404View() {
         />
       </m.div>
 
-      <Button component={NextLink} href="/" size="large" color="inherit" variant="contained">
+      <Button component={RouterLink} to="/" size="large" color="inherit" variant="contained">
         Go to Home
       </Button>
     </MotionContainer>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-// next
-import { useRouter } from 'next/router';
+import { useLocation } from 'react-router-dom';
 // @mui
 import { List, Drawer, IconButton, Button, Stack } from '@mui/material';
 // config
@@ -16,7 +15,7 @@ import NavList from './NavList';
 // ----------------------------------------------------------------------
 
 export default function NavMobile({ data }: NavProps) {
-  const { pathname } = useRouter();
+  const { pathname } = useLocation();
 
   const [open, setOpen] = useState(false);
 

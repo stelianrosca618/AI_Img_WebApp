@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Button, Rating, Typography, TextField, Divider } from '@mui/material';
 // hooks
@@ -124,8 +123,8 @@ export default function EcommerceProductDetailsInfo({
 
         <Stack direction="row" spacing={2}>
           <Button
-            component={NextLink}
-            href={paths.eCommerce.cart}
+            component={RouterLink}
+            to={paths.eCommerce.cart}
             fullWidth={!isMdUp}
             size="large"
             color="inherit"
@@ -136,8 +135,8 @@ export default function EcommerceProductDetailsInfo({
           </Button>
 
           <Button
-            component={NextLink}
-            href={paths.eCommerce.cart}
+            component={RouterLink}
+            to={paths.eCommerce.cart}
             fullWidth={!isMdUp}
             size="large"
             color="primary"

@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Link, Stack, Divider, Container, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 // routes
@@ -54,8 +53,8 @@ export default function LoginIllustrationView() {
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                 {`Don’t have an account? `}
                 <Link
-                  component={NextLink}
-                  href={paths.registerIllustration}
+                  component={RouterLink}
+                  to={paths.registerIllustration}
                   variant="subtitle2"
                   color="primary"
                 >

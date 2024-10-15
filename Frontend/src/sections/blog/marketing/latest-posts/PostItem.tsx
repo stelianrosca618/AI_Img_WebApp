@@ -1,6 +1,5 @@
 import { m } from 'framer-motion';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Link, Stack, Avatar } from '@mui/material';
@@ -76,8 +75,8 @@ export default function PostItem({ post }: Props) {
           />
 
           <Link
-            component={NextLink}
-            href={paths.marketing.post}
+            component={RouterLink}
+            to={paths.marketing.post}
             variant="h4"
             color="inherit"
             underline="none"

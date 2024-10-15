@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Stack, Avatar, Typography, Paper, Divider, Link } from '@mui/material';
 // routes
@@ -35,7 +34,7 @@ export default function PostItem({ post }: Props) {
         </Stack>
 
         <Stack spacing={1}>
-          <Link component={NextLink} href={paths.eLearning.post} color="inherit">
+          <Link component={RouterLink} to={paths.eLearning.post} color="inherit">
             <TextMaxLine variant="h6" persistent>
               {title}
             </TextMaxLine>

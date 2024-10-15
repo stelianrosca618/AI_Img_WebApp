@@ -1,5 +1,4 @@
-// next
-import { useRouter } from 'next/router';
+import { Outlet, useLocation } from 'react-router-dom';
 // @mui
 import { Box } from '@mui/material';
 // config
@@ -16,12 +15,8 @@ const spacingLayout = [...pathsOnDark, '/', '/e-learning/landing', '/marketing/l
 
 // ----------------------------------------------------------------------
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export default function MainLayout({ children }: Props) {
-  const { pathname } = useRouter();
+export default function MainLayout() {
+  const { pathname } = useLocation();
 
   const actionPage = (arr: string[]) => arr.some((path) => pathname === path);
 
@@ -36,7 +31,7 @@ export default function MainLayout({ children }: Props) {
         }}
       >
         {!actionPage(spacingLayout) && <Spacing />}
-        {children}
+        <Outlet />
       </Box>
 
       <Footer />

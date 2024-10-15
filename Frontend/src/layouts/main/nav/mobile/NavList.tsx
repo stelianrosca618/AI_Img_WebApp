@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// next
-import { useRouter } from 'next/router';
+import { useLocation } from 'react-router-dom';
 // @mui
 import { Collapse } from '@mui/material';
 // hooks
@@ -18,7 +17,7 @@ type NavListProps = {
 };
 
 export default function NavList({ item }: NavListProps) {
-  const { pathname } = useRouter();
+  const { pathname } = useLocation();
 
   const { path, children } = item;
 

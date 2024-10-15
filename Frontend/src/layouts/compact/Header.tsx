@@ -1,5 +1,4 @@
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { AppBar, Toolbar, Link, Stack } from '@mui/material';
@@ -50,7 +49,7 @@ export default function Header({ isOffset }: Props) {
         <Stack spacing={1} direction="row" alignItems="center">
           <SettingsDrawer />
 
-          <Link href={paths.support} component={NextLink} variant="subtitle2" color="inherit">
+          <Link to={paths.support} component={RouterLink} variant="subtitle2" color="inherit">
             Need Help?
           </Link>
         </Stack>

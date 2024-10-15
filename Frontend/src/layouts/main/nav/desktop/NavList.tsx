@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-// next
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Fade, Portal, Stack, Box, Link, Unstable_Grid2 as Grid } from '@mui/material';
 // hooks
@@ -17,7 +15,7 @@ import { NavItem } from './NavItem';
 // ----------------------------------------------------------------------
 
 export default function NavList({ item }: { item: NavItemBaseProps }) {
-  const { pathname } = useRouter();
+  const { pathname } = useLocation();
 
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -105,7 +103,7 @@ export default function NavList({ item }: { item: NavItemBaseProps }) {
 // ----------------------------------------------------------------------
 
 function NavSubList({ subheader, isNew, cover, items }: NavListProps) {
-  const { pathname } = useRouter();
+  const { pathname } = useLocation();
 
   const coverPath = items.length ? items[0].path : '';
 
@@ -123,7 +121,7 @@ function NavSubList({ subheader, isNew, cover, items }: NavListProps) {
       </StyledSubheader>
 
       {!commonList && (
-        <Link component={NextLink} href={coverPath}>
+        <Link component={RouterLink} to={coverPath}>
           <Image
             disabledEffect
             alt={cover}

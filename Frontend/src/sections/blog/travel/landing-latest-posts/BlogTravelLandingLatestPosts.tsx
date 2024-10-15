@@ -1,6 +1,5 @@
 import { useRef } from 'react';
-// next
-import NextLink from 'next/link';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Box, Stack, Button, Typography } from '@mui/material';
@@ -107,8 +106,8 @@ export default function BlogTravelLandingLatestPosts({ posts }: Props) {
             }}
           >
             <Button
-              component={NextLink}
-              href={paths.travel.posts}
+              component={RouterLink}
+              to={paths.travel.posts}
               endIcon={<Iconify icon="carbon:chevron-right" />}
             >
               View All
