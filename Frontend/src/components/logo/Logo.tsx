@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Box, BoxProps, Link } from '@mui/material';
-
+import newLogo from "../../assets/images/newLogo.png"
 // ----------------------------------------------------------------------
 
 interface LogoProps extends BoxProps {
@@ -65,7 +65,8 @@ function Logo({ single = false, sx }: LogoProps) {
           ...sx,
         }}
       >
-        {single ? singleLogo : fullLogo}
+        {/* {single ? <img src={newLogo} alt='newlogo'> : <fullLogo />} */}
+        <img src={newLogo} alt='newlogo' />
       </Box>
     </Link>
   );

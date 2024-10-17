@@ -118,3 +118,51 @@ export const navConfig = [
   },
   { title: 'Documentation', path: paths.docs },
 ];
+
+
+export const newNavConfig = [
+  { title: 'Home', path: '/' },
+  {
+    title: 'Features', path: '/',
+    children: [
+      {
+        subheader: 'Features',
+        items: [
+          {
+            title: 'AI Model Creation from Selfies',
+            path: '/'
+          },
+          {
+            title: 'Virtual Try-On for Clothes',
+            path: '/'
+          },
+          {
+            title: 'Professional Headshot Generation',
+            path: '/'
+          },
+          {
+            title: 'Influencer Photo Creation',
+            path: '/'
+          },
+          {
+            title: 'Aesthetic Packs with Themes',
+            path: '/'
+          }
+        ]
+      },
+
+    ]
+  },
+  {
+    title: 'How It Works', path: '/'
+  },
+  {
+    title: 'Pricing', path: '/'
+  },
+  {
+    title: 'Community', path: '/'
+  },
+  {
+    title: 'Blog', path: '/'
+  }
+]

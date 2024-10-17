@@ -107,109 +107,118 @@ export default function Router() {
     {
       element: <MainLayout />,
       children: [
-        { element: <HomePage />, index: true },
-        { path: 'support', element: <SupportPage /> },
-        // Marketing
-        {
-          path: 'marketing',
-          children: [
-            { path: 'landing', element: <MarketingLandingPage /> },
-            { path: 'services', element: <MarketingServicesPage /> },
-            { path: 'case-studies', element: <MarketingCaseStudiesPage /> },
-            { path: 'case-study', element: <MarketingCaseStudyPage /> },
-            { path: 'posts', element: <MarketingBlogPage /> },
-            { path: 'post', element: <MarketingPostPage /> },
-            { path: 'about', element: <MarketingAboutPage /> },
-            { path: 'contact', element: <MarketingContactPage /> },
-          ],
-        },
-        // Travel
-        {
-          path: 'travel',
-          children: [
-            { path: 'landing', element: <TravelLandingPage /> },
-            { path: 'tours', element: <TravelToursPage /> },
-            { path: 'tour', element: <TravelTourPage /> },
-            { path: 'checkout', element: <TravelCheckoutPage /> },
-            { path: 'order-completed', element: <TravelOrderCompletedPage /> },
-            { path: 'posts', element: <TravelBlogPage /> },
-            { path: 'post', element: <TravelPostPage /> },
-            { path: 'about', element: <TravelAboutPage /> },
-            { path: 'contact', element: <TravelContactPage /> },
-          ],
-        },
-        // Career
-        {
-          path: 'career',
-          children: [
-            { path: 'landing', element: <CareerLandingPage /> },
-            { path: 'jobs', element: <CareerJobsPage /> },
-            { path: 'job', element: <CareerJobPage /> },
-            { path: 'posts', element: <CareerBlogPage /> },
-            { path: 'post', element: <CareerPostPage /> },
-            { path: 'about', element: <CareerAboutPage /> },
-            { path: 'contact', element: <CareerContactPage /> },
-          ],
-        },
-        // E-learning
-        {
-          path: 'e-learning',
-          children: [
-            { path: 'landing', element: <ElearningLandingPage /> },
-            { path: 'courses', element: <ElearningCoursesPage /> },
-            { path: 'course', element: <ElearningCoursePage /> },
-            { path: 'posts', element: <ElearningBlogPage /> },
-            { path: 'post', element: <ElearningPostPage /> },
-            { path: 'about', element: <ElearningAboutPage /> },
-            { path: 'contact', element: <ElearningContactPage /> },
-          ],
-        },
-        // E-commerce
-        {
-          path: 'e-commerce',
-          children: [
-            { path: 'landing', element: <EcommerceLandingPage /> },
-            { path: 'products', element: <EcommerceProductsPage /> },
-            { path: 'product', element: <EcommerceProductPage /> },
-            { path: 'cart', element: <EcommerceCartPage /> },
-            { path: 'checkout', element: <EcommerceCheckoutPage /> },
-            { path: 'order-completed', element: <EcommerceOrderCompletedPage /> },
-            { path: 'wishlist', element: <EcommerceWishlistPage /> },
-            { path: 'compare', element: <EcommerceComparePage /> },
-            {
-              path: 'account',
-              children: [
-                { path: 'personal', element: <EcommerceAccountPersonalPage /> },
-                { path: 'wishlist', element: <EcommerceAccountWishlistPage /> },
-                { path: 'vouchers', element: <EcommerceAccountVouchersPage /> },
-                { path: 'orders', element: <EcommerceAccountOrdersPage /> },
-                { path: 'payment', element: <EcommerceAccountPaymentPage /> },
-              ],
-            },
-          ],
-        },
-        // Demo Components
-        {
-          path: 'components',
-          children: [
-            { element: <ComponentsPage />, index: true },
-            { path: 'animate', element: <DemoAnimatePage /> },
-            { path: 'carousel', element: <DemoCarouselsPage /> },
-            { path: 'count-up', element: <DemoCountUpPage /> },
-            { path: 'form-validation', element: <DemoFormValidationPage /> },
-            { path: 'icons', element: <DemoIconsPage /> },
-            { path: 'image', element: <DemoImagePage /> },
-            { path: 'label', element: <DemoLabelPage /> },
-            { path: 'lightbox', element: <DemoLightboxPage /> },
-            { path: 'markdown', element: <DemoMarkdownPage /> },
-            { path: 'mega-menu', element: <DemoMegaMenuPage /> },
-            { path: 'navigation-bar', element: <DemoNavigationBarPage /> },
-            { path: 'scroll', element: <DemoScrollbarPage /> },
-            { path: 'player', element: <DemoPlayerPage /> },
-            { path: 'text-max-line', element: <DemoTextMaxLinePage /> },
-          ],
-        },
+        { path: '/', element: <CareerLandingPage /> },
+        { path: 'jobs', element: <CareerJobsPage /> },
+        { path: 'job', element: <CareerJobPage /> },
+        { path: 'posts', element: <CareerBlogPage /> },
+        { path: 'post', element: <CareerPostPage /> },
+        { path: 'about', element: <CareerAboutPage /> },
+        { path: 'contact', element: <CareerContactPage /> },
       ],
+      // children: [
+      //   { element: <HomePage />, index: true },
+      //   // Career
+      //   {
+      //     path: 'career',
+      //     children: [
+      //       { path: 'landing', element: <CareerLandingPage /> },
+      //       { path: 'jobs', element: <CareerJobsPage /> },
+      //       { path: 'job', element: <CareerJobPage /> },
+      //       { path: 'posts', element: <CareerBlogPage /> },
+      //       { path: 'post', element: <CareerPostPage /> },
+      //       { path: 'about', element: <CareerAboutPage /> },
+      //       { path: 'contact', element: <CareerContactPage /> },
+      //     ],
+      //   },
+      //   { path: 'support', element: <SupportPage /> },
+      //   // Marketing
+      //   {
+      //     path: 'marketing',
+      //     children: [
+      //       { path: 'landing', element: <MarketingLandingPage /> },
+      //       { path: 'services', element: <MarketingServicesPage /> },
+      //       { path: 'case-studies', element: <MarketingCaseStudiesPage /> },
+      //       { path: 'case-study', element: <MarketingCaseStudyPage /> },
+      //       { path: 'posts', element: <MarketingBlogPage /> },
+      //       { path: 'post', element: <MarketingPostPage /> },
+      //       { path: 'about', element: <MarketingAboutPage /> },
+      //       { path: 'contact', element: <MarketingContactPage /> },
+      //     ],
+      //   },
+      //   // Travel
+      //   {
+      //     path: 'travel',
+      //     children: [
+      //       { path: 'landing', element: <TravelLandingPage /> },
+      //       { path: 'tours', element: <TravelToursPage /> },
+      //       { path: 'tour', element: <TravelTourPage /> },
+      //       { path: 'checkout', element: <TravelCheckoutPage /> },
+      //       { path: 'order-completed', element: <TravelOrderCompletedPage /> },
+      //       { path: 'posts', element: <TravelBlogPage /> },
+      //       { path: 'post', element: <TravelPostPage /> },
+      //       { path: 'about', element: <TravelAboutPage /> },
+      //       { path: 'contact', element: <TravelContactPage /> },
+      //     ],
+      //   },
+      //   // E-learning
+      //   {
+      //     path: 'e-learning',
+      //     children: [
+      //       { path: 'landing', element: <ElearningLandingPage /> },
+      //       { path: 'courses', element: <ElearningCoursesPage /> },
+      //       { path: 'course', element: <ElearningCoursePage /> },
+      //       { path: 'posts', element: <ElearningBlogPage /> },
+      //       { path: 'post', element: <ElearningPostPage /> },
+      //       { path: 'about', element: <ElearningAboutPage /> },
+      //       { path: 'contact', element: <ElearningContactPage /> },
+      //     ],
+      //   },
+      //   // E-commerce
+      //   {
+      //     path: 'e-commerce',
+      //     children: [
+      //       { path: 'landing', element: <EcommerceLandingPage /> },
+      //       { path: 'products', element: <EcommerceProductsPage /> },
+      //       { path: 'product', element: <EcommerceProductPage /> },
+      //       { path: 'cart', element: <EcommerceCartPage /> },
+      //       { path: 'checkout', element: <EcommerceCheckoutPage /> },
+      //       { path: 'order-completed', element: <EcommerceOrderCompletedPage /> },
+      //       { path: 'wishlist', element: <EcommerceWishlistPage /> },
+      //       { path: 'compare', element: <EcommerceComparePage /> },
+      //       {
+      //         path: 'account',
+      //         children: [
+      //           { path: 'personal', element: <EcommerceAccountPersonalPage /> },
+      //           { path: 'wishlist', element: <EcommerceAccountWishlistPage /> },
+      //           { path: 'vouchers', element: <EcommerceAccountVouchersPage /> },
+      //           { path: 'orders', element: <EcommerceAccountOrdersPage /> },
+      //           { path: 'payment', element: <EcommerceAccountPaymentPage /> },
+      //         ],
+      //       },
+      //     ],
+      //   },
+      //   // Demo Components
+      //   {
+      //     path: 'components',
+      //     children: [
+      //       { element: <ComponentsPage />, index: true },
+      //       { path: 'animate', element: <DemoAnimatePage /> },
+      //       { path: 'carousel', element: <DemoCarouselsPage /> },
+      //       { path: 'count-up', element: <DemoCountUpPage /> },
+      //       { path: 'form-validation', element: <DemoFormValidationPage /> },
+      //       { path: 'icons', element: <DemoIconsPage /> },
+      //       { path: 'image', element: <DemoImagePage /> },
+      //       { path: 'label', element: <DemoLabelPage /> },
+      //       { path: 'lightbox', element: <DemoLightboxPage /> },
+      //       { path: 'markdown', element: <DemoMarkdownPage /> },
+      //       { path: 'mega-menu', element: <DemoMegaMenuPage /> },
+      //       { path: 'navigation-bar', element: <DemoNavigationBarPage /> },
+      //       { path: 'scroll', element: <DemoScrollbarPage /> },
+      //       { path: 'player', element: <DemoPlayerPage /> },
+      //       { path: 'text-max-line', element: <DemoTextMaxLinePage /> },
+      //     ],
+      //   },
+      // ],
     },
     // Simple layout
     {

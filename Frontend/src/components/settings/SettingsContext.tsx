@@ -11,20 +11,20 @@ import { SettingsContextProps } from './types';
 const initialState: SettingsContextProps = {
   ...defaultSettings,
   // Mode
-  onToggleMode: () => {},
+  onToggleMode: () => { },
   // Direction
-  onToggleDirection: () => {},
+  onToggleDirection: () => { },
   // Color
-  onChangeColorPresets: () => {},
+  onChangeColorPresets: () => { },
   presetsColor: defaultPreset,
   presetsOption: [],
   // Reset
-  onResetSetting: () => {},
+  onResetSetting: () => { },
   // Open
   open: false,
-  onToggle: () => {},
-  onOpen: () => {},
-  onClose: () => {},
+  onToggle: () => { },
+  onOpen: () => { },
+  onClose: () => { },
   // Not default
   notDefault: false,
 };
@@ -54,7 +54,8 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
 
   // Mode
   const onToggleMode = useCallback(() => {
-    const themeMode = settings.themeMode === 'light' ? 'dark' : 'light';
+    // const themeMode = settings.themeMode === 'light' ? 'dark' : 'light';
+    const themeMode = settings.themeMode === 'dark';
     setSettings({ ...settings, themeMode });
   }, [setSettings, settings]);
 

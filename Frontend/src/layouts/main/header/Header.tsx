@@ -15,7 +15,7 @@ import Logo from 'src/components/logo';
 import Label from 'src/components/label';
 import SettingsDrawer from 'src/components/settings/drawer';
 //
-import { NavMobile, NavDesktop, navConfig } from '../nav';
+import { NavMobile, NavDesktop, navConfig, newNavConfig } from '../nav';
 import Searchbar from '../../components/Searchbar';
 import HeaderShadow from '../../components/HeaderShadow';
 
@@ -62,7 +62,7 @@ export default function Header({ headerOnDark }: Props) {
             <Logo />
 
             <Link href="https://zone-docs.vercel.app/changelog" target="_blank" rel="noopener">
-              <Label
+              {/* <Label
                 color="info"
                 sx={{
                   ml: 0.5,
@@ -76,11 +76,11 @@ export default function Header({ headerOnDark }: Props) {
                 }}
               >
                 v2.0
-              </Label>
+              </Label> */}
             </Link>
           </Box>
 
-          {isMdUp && <NavDesktop data={navConfig} />}
+          {isMdUp && <NavDesktop data={newNavConfig} />}
 
           <Stack
             spacing={2}
@@ -90,12 +90,11 @@ export default function Header({ headerOnDark }: Props) {
             justifyContent="flex-end"
           >
             <Stack spacing={1} direction="row" alignItems="center">
-              <Searchbar />
 
-              <SettingsDrawer />
+              {/* <SettingsDrawer /> */}
             </Stack>
 
-            {isMdUp && (
+            {/* {isMdUp && (
               <Button
                 variant="contained"
                 color="inherit"
@@ -105,10 +104,20 @@ export default function Header({ headerOnDark }: Props) {
               >
                 Buy Now
               </Button>
-            )}
+            )} */}
+
+            <Button
+              variant="contained"
+              color="inherit"
+              href="./auth/login"
+              target="_blank"
+              rel="noopener"
+            >
+              My Account
+            </Button>
           </Stack>
 
-          {!isMdUp && <NavMobile data={navConfig} />}
+          {!isMdUp && <NavMobile data={newNavConfig} />}
         </Container>
       </Toolbar>
 

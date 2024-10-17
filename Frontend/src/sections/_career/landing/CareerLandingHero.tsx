@@ -9,6 +9,8 @@ import {
   Container,
   Typography,
   Unstable_Grid2 as Grid,
+  TextField,
+  InputAdornment,
 } from '@mui/material';
 // utils
 import { bgGradient } from 'src/utils/cssStyles';
@@ -95,22 +97,43 @@ export default function CareerLandingHero() {
               }}
             >
               <Stack spacing={3}>
-                <Typography variant="h1" sx={{ color: 'common.white' }}>
-                  Get The
+                <Typography variant="h2" sx={{ color: 'common.white' }}>
+                  Create Personalized
                   <Box component="span" sx={{ color: 'primary.main' }}>
-                    {` Career `}
+                    {`  AI Models  `}
                   </Box>
-                  You Deserve
+                  & Enhance Your Photos
                 </Typography>
 
                 <Typography sx={{ color: 'grey.500' }}>
-                  Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis
-                  venenatis ante odio sit amet eros.
+                  Upload selfies, try on outfits, generate professional headshots, and much more with AI-powered tools.
                 </Typography>
               </Stack>
 
               <StyledBar spacing={{ xs: 1, md: 0 }}>
-                <CareerFilterKeyword
+                <TextField
+                  fullWidth
+                  hiddenLabel
+                  placeholder="Please upload your photos"
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Button
+                          size="large"
+                          variant="contained"
+                          sx={{
+                            px: 0,
+                            minWidth: { xs: 1, md: 48 },
+                          }}
+                        >
+                          <Iconify icon="carbon:upload" width={24} />
+                        </Button>
+                      </InputAdornment>
+                    ),
+                    sx: { pr: 0.5 },
+                  }}
+                />
+                {/* <CareerFilterKeyword
                   filterKeyword={filters.filterKeyword}
                   onChangeKeyword={handleChangeKeyword}
                   sx={{
@@ -128,9 +151,9 @@ export default function CareerLandingHero() {
                     bgcolor: 'transparent',
                     '&:hover, &.Mui-focused': { bgcolor: 'transparent' },
                   }}
-                />
+                /> */}
 
-                <Button
+                {/* <Button
                   size="large"
                   variant="contained"
                   sx={{
@@ -139,12 +162,12 @@ export default function CareerLandingHero() {
                   }}
                 >
                   <Iconify icon="carbon:search" width={24} />
-                </Button>
+                </Button> */}
               </StyledBar>
 
-              <BrandsSection />
+              {/* <BrandsSection /> */}
 
-              <SummarySection />
+              {/* <SummarySection /> */}
             </Stack>
           </Grid>
 
